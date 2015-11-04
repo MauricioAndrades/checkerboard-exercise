@@ -13,11 +13,20 @@ var makeDiv = function(color) {
     return newDiv;
 };
 
-for (i = 0 ; i< 9*12; i++) {
-    makeDiv("black");
-    makeDiv("red");
+var arralpha = [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1];
+console.log(arralpha);
+for (var i = 0 ; i< 9; i++) {
+    alpha = arralpha[i];
+    //console.log(alpha);
+    for (j = 0 ; j < 12; j++) {
+        r = Math.floor(Math.random()*256).toString();
+        g = (Math.floor(Math.random()*256).toString());
+        b = (Math.floor(Math.random()*256).toString());
+        rgba = ('rgba('+r + ','+g +','+ b+','+ alpha +')');
+        console.log(rgba);
+        makeDiv(rgba);
+    }
 }
-
 var body = document.getElementsByTagName("body");
 
 
